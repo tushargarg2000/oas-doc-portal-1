@@ -7,6 +7,8 @@ import Sidebar1 from './Sidebar1';
 import App1 from './App1';
 import '../node_modules/swagger-ui/dist/swagger-ui.css'
 import {RedocStandalone} from 'redoc';
+import Tree from "react-fs-treeview";
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -102,6 +104,14 @@ class App extends Component {
         {/* <App1 definition = {this.state.definitionLink} /> */}
         {/* <App1 />   */}
         
+        <Tree
+            className="class1 class2 class3"
+            basePath="./storeFront"
+            disableContextMenu={true}
+            onItemSelected={selectedItem => console.log(selectedItem)}
+            fsTreeViewUrl = "http://localhost:3000"
+        />
+
         <App1 value= {this.state.definitionLink} />
         <div id="api-data" />
         
